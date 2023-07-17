@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 
-app.get("/",()=>{
+app.get("/",(req,res)=>{
     try {
         const data = db.data1.aggregate([
             {
@@ -41,11 +41,11 @@ app.get("/",()=>{
             }
           ])
           
-        res.send(data)
-        console.log("Data Sent Successfully")
+       console.log("Data Sent Successfully")
+       return res.send(data)
     } catch (error) {
         console.log("Data Sending Failed")
-        
+        return res.send("Data Sending Failed")
     }
     
 })
