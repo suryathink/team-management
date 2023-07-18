@@ -22,7 +22,7 @@ function App() {
  const getData = async ()=>{
    setIsLoading(true);
   try {
-    let data = await fetch(`http://localhost:8080/getdata`)
+    let data = await fetch(`https://team-backend-947y.onrender.com/getdata`)
     let response = await data.json();
     console.log(response);
     // handleClick()
