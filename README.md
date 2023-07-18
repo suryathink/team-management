@@ -16,18 +16,8 @@
 ## Installation & Getting started
 Detailed instructions on how to install, configure, and get the project running.
 
-```bash
-npm install my-project
-cd my-project
-npm start
-```
 
-## Usage
-Provide instructions and examples on how to use your project.
 
-```bash
-# Example
-```
 
 <img width="912" alt="image" src="https://github.com/suryathink/team-management/assets/96377101/29064ead-08ef-4ea9-b1cf-2d31033605a0">
 
