@@ -13,10 +13,6 @@
 - fetches data from  2 separate MongoDB collections and joins them and shows that to the user in tabular form.
 
 
-## Installation & Getting started
-Detailed instructions on how to install, configure, and get the project running.
-
-
 
 
 <img width="912" alt="image" src="https://github.com/suryathink/team-management/assets/96377101/29064ead-08ef-4ea9-b1cf-2d31033605a0">
