@@ -2,43 +2,16 @@ const express = require('express');
 const DATA1 = require('./models/data1model')
 const DATA2 = require('./models/data2model')
 const connectDatabase = require('./config/db');
-
+const cors = require('cors')
+const morgan = require('morgan')
 
 const app = express();
 app.use(express.json());
+app.use(morgan('tiny'));
+app.use(cors());
 
 
 app.get("/getdata",async (req,res)=>{
-
-  // try {
-  //   let result= await DATA1.aggregate([
-  //     {
-  //       $lookup: {
-  //         from: 'data2',   //data2
-  //         localField: 'email',
-  //         foreignField: 'email',
-  //         as: 'joinedData',
-  //       },
-  //     },
-  //     {
-  //       $project: {
-  //         team_name: { $arrayElemAt: ['$joinedData.team_name', 0] },
-  //         full_name: 1,
-  //         email: 1,
-  //         number: 1,
-  //         city: 1,
-  //         url: 1,
-  //       },
-  //     },
-  //   ])
-
-  //   let finalResult = await result.json();
-  //   console.log("Data Converted to json successfully")
-  //   res.send(finalResult)
-  // } catch (error) {
-  //   console.log("Error while fetching")
-  //   res.send("Error from Fetching Data")
-  // }
   
         let data = await DATA1.aggregate([
             {

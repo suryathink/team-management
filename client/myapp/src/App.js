@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button';
+import { useState } from 'react';
+
 
 function App() {
+  const [data,setData] = useState([])
+
+ const getData = async ()=>{
+  try {
+    let data = await fetch(`https://team-backend-947y.onrender.com/getdata`)
+     let response = await data.json();
+     console.log(response);
+     setData(response)
+  } catch (error) {
+     console.log(error)
+     alert(error);
+  }
+ }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Button onClick={()=>{getData()}} variant="contained">Get Data</Button>
+
     </div>
   );
 }
